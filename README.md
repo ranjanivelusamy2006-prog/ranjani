@@ -70,7 +70,7 @@ USE CASE DIAGRAM :
            * Student 
            * Admin 
      Diagram : 
-               # Use Case Diagram 
+               # Use Case Diagram ///
              +----------------+
              |      USER      |
              +----------------+
@@ -96,7 +96,7 @@ USE CASE DIAGRAM :
 +---------------+         +---------------+
 | Manage FAQ    |         | Manage Users  |
 +---------------+         +---------------+
-
+///
                         
 DATABASE REQUIREMENTS :
       User Table
@@ -130,7 +130,7 @@ Purpose :
 
 
 ER DIAGRAM :
-   # AI Powered Smart Chatbot System
+   # AI Powered Smart Chatbot System ///
 +------------------+
 |       USER       |
 +------------------+
@@ -169,7 +169,7 @@ ER DIAGRAM :
 | faq_id (PK)      |
 | question         |
 | answer           |
-+------------------+
++------------------+ ///
 
 Relationships :
       * One User can have many Chats
