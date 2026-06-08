@@ -65,5 +65,98 @@ MODULE :
             * Mobile/Desktop Support
             * Easy Navigation
 
+
+USE CASE DIAGRAM :
+     ACTORS :
+           * Student 
+           * Admin 
+     Diagram : 
+
+            +-------------------+
+                |       Admin       |
+                +-------------------+
+                    /   |    \
+                   /    |     \
+          Manage Users  |   Manage Data
+                         |
+                    Monitor System
+
+                +-------------------+
+                |       User        |
+                +-------------------+
+                 /   |    |    \
+                /    |    |     \
+           Register Login Ask Query View History
+                              |
+                       Receive Response
+DATABASE REQUIREMENTS :
+      User Table
+         * user_id
+         * name
+         * email
+         * password
+      Chat Table
+         * chat_id
+         * user_id
+         * question
+         * response
+      Admin Table
+         * admin_id
+         * admin_name
+         * password
+     FAQ Table
+         * faq_id
+         * question
+         * answer
+
+Relationship :
+    All tables are connected with the AI Powered Smart Chatbot System for user interaction, data storage, and response 
+management using MySQL database.
+
+Purpose :
+    * Store user information
+    * Store chatbot questions and responses
+    * Manage admin and chatbot data
+    * Maintain chat history in MySQL database.
+
+
+ER DIAGRAM :
+
+       +-----------+       +-----------+
+|   USER    |       |   ADMIN   |
++-----------+       +-----------+
+| user_id   |       | admin_id  |
+| name      |       | admin_name|
+| email     |       | password  |
+| password  |       +-----------+
++-----------+
+      |
+      | user_id
+      |
++-----------+
+|   CHAT    |
++-----------+
+| chat_id   |
+| user_id   |
+| question  |
+| response  |
++-----------+
+
++-----------+
+|    FAQ    |
++-----------+
+| faq_id    |
+| question  |
+| answer    |
++-----------+
+
+
+Relationships :
+      * One User can have many Chats
+      * Chat Table is connected to User Table using user_id
+      * Admin manages Users and Chatbot data
+      * FAQ Table provides answers to the chatbot system
+
+
       
 
