@@ -71,22 +71,50 @@ USE CASE DIAGRAM :
            * Student 
            * Admin 
      Diagram : 
-               +-------------------+
-                |       Admin       |
-                +-------------------+
-                    /   |    \
-                   /    |     \
-          Manage Users  |   Manage Data
-                         |
-                    Monitor System
-                +-------------------+
-                |       User        |
-                +-------------------+
-                 /   |    |    \
-                /    |    |     \
-           Register Login Ask Query View History
-                              |
-                       Receive Response
+               # ER Diagram - AI Powered Smart Chatbot System
+
+```text
++------------------+
+|       USER       |
++------------------+
+| user_id (PK)     |
+| name             |
+| email            |
+| password         |
++------------------+
+         |
+         | 1
+         |
+         | M
++------------------+
+|       CHAT       |
++------------------+
+| chat_id (PK)     |
+| user_id (FK)     |
+| question         |
+| response         |
+| timestamp        |
++------------------+
+
++------------------+
+|      ADMIN       |
++------------------+
+| admin_id (PK)    |
+| admin_name       |
+| password         |
++------------------+
+         |
+         | Manages
+         |
++------------------+
+|       FAQ        |
++------------------+
+| faq_id (PK)      |
+| question         |
+| answer           |
++------------------+
+
+               
 
 DATABASE REQUIREMENTS :
       User Table
