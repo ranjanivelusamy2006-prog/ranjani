@@ -1,162 +1,24 @@
 PROJECT TITLE:
    AI Powered Smart Chatbot System 
 
-PROBLEM STATEMENT:
-      Many organizations and websites face difficulties in providing instant responses to user queries all the time. Human support
-systems require more time, cost, and manpower. Users expect quick and accurate answers, but traditional customer support cannot always
-respond immediately. To overcome these issues, an AI Powered Smart Chatbot System is developed to provide automatic, intelligent, and 
-real-time responses to users using Artificial Intelligence and Natural Language Processing (NLP).
-
+   
 PROJECT OBJECTIVES :
      * Advanced application - Artificial Intelligence , natural language processing
      * chatbot- answer question,provide information .
      * System - customer service ,education and healthcare .
 
-FEATURES :
-     * User-friendly interface 
-     * AI-based response generation 
-     * User query handling 
-     * Time-saving communication
-     * Easy information access
+TECHNOLOGY :
+         FOR FRONTEND = react.js
+         FOR BACKEND = python
+         Database=MySQL,Mongodb
 
-PROJECT STATUS :
-       Objective  Definition  and Problem Statement Completed 
-
-User :
-     The user can interact with the AI chatbot ,ask queries and receive quick responses .
-        * User Module 
-        * User Panel
-        * User Interaction 
-        * User Features 
-
-MODULE :
-        * User Module 
-        * Chatbot Module 
-        * Database Module 
-        * Authentication Module
-        * Admin Module 
-        * Interface Module 
-
-       👤 User Module
-            * User Registration
-            * User Login
-            * Ask Questions
-            * View Chat Responses
-            * Chat History
-       🤖 Chatbot Module
-            * AI Response Generation
-            * NLP Processing
-            * FAQ Handling
-            * Smart Reply System
-      🗄️ Database Module
-            * Store User Data
-            * Save Chat History
-            * Manage Information
-      🔐 Authentication Module
-            * Secure Login
-            * Password Validation
-            * User Verification
-      ⚙️ Admin Module
-            * Manage Users
-            * Update FAQ Data
-            * Monitor System
-     🌐 Interface Module
-            * User-Friendly Design
-            * Mobile/Desktop Support
-            * Easy Navigation
+ ADVANTAGE:
+       * Fast response
+       * Available 24/7
+       * User friendly
 
 
-USE CASE DIAGRAM :
-     ACTORS :
-           * Student 
-           * Admin 
-     Diagram : 
-
-            +-------------------+
-                |       Admin       |
-                +-------------------+
-                    /   |    \
-                   /    |     \
-          Manage Users  |   Manage Data
-                         |
-                    Monitor System
-
-                +-------------------+
-                |       User        |
-                +-------------------+
-                 /   |    |    \
-                /    |    |     \
-           Register Login Ask Query View History
-                              |
-                       Receive Response
-DATABASE REQUIREMENTS :
-      User Table
-         * user_id
-         * name
-         * email
-         * password
-      Chat Table
-         * chat_id
-         * user_id
-         * question
-         * response
-      Admin Table
-         * admin_id
-         * admin_name
-         * password
-     FAQ Table
-         * faq_id
-         * question
-         * answer
-
-Relationship :
-    All tables are connected with the AI Powered Smart Chatbot System for user interaction, data storage, and response 
-management using MySQL database.
-
-Purpose :
-    * Store user information
-    * Store chatbot questions and responses
-    * Manage admin and chatbot data
-    * Maintain chat history in MySQL database.
-
-
-ER DIAGRAM :
-
-       +-----------+       +-----------+
-|   USER    |       |   ADMIN   |
-+-----------+       +-----------+
-| user_id   |       | admin_id  |
-| name      |       | admin_name|
-| email     |       | password  |
-| password  |       +-----------+
-+-----------+
-      |
-      | user_id
-      |
-+-----------+
-|   CHAT    |
-+-----------+
-| chat_id   |
-| user_id   |
-| question  |
-| response  |
-+-----------+
-
-+-----------+
-|    FAQ    |
-+-----------+
-| faq_id    |
-| question  |
-| answer    |
-+-----------+
-
-
-Relationships :
-      * One User can have many Chats
-      * Chat Table is connected to User Table using user_id
-      * Admin manages Users and Chatbot data
-      * FAQ Table provides answers to the chatbot system
-
-
-      
-
+DISADVANTAGE:
+      * Needs internet connection
+      * Depends on AI and database
+      * Sometimes gives wrong answers
