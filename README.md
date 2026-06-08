@@ -36,8 +36,7 @@ MODULE :
         * Authentication Module
         * Admin Module 
         * Interface Module 
-
-       👤 User Module
+      👤 User Module
             * User Registration
             * User Login
             * Ask Questions
@@ -71,33 +70,34 @@ USE CASE DIAGRAM :
            * Student 
            * Admin 
      Diagram : 
-               USE CASE DIAGRAM
-                         +-------------+
-                         |    ADMIN    |
-                         +-------------+
-                                |
-          ------------------------------------------------
-          |                    |                        |
-          |                    |                        |
-   +-------------+     +---------------+      +----------------+
-   | Manage User |     | Manage FAQ    |      | Monitor System |
-   +-------------+     +---------------+      +----------------+
-                         +-------------+
-                         |    USER     |
-                         +-------------+
-                                |
-     ----------------------------------------------------------------
-     |                    |                  |                      |
-     |                    |                  |                      |
-+------------+      +-----------+      +-------------+      +---------------+
-| Register   |      | Login     |      | Ask Query   |      | View History  |
-+------------+      +-----------+      +-------------+      +---------------+
-                                                                  |
-                                                                  |
-                                                         +------------------+
-                                                         | Receive Response |
-                                                         +------------------+
+               # Use Case Diagram 
+             +----------------+
+             |      USER      |
+             +----------------+
+                    |
+      +-------------+-------------+
+      |                           |
+      v                           v
++---------------+         +---------------+
+| Ask Question  |         | View Response |
++---------------+         +---------------+
+      |
+      v
++---------------+
+| View FAQ      |
++---------------+
+             +----------------+
+             |     ADMIN      |
+             +----------------+
+                    |
+      +-------------+-------------+
+      |                           |
+      v                           v
++---------------+         +---------------+
+| Manage FAQ    |         | Manage Users  |
++---------------+         +---------------+
 
+                        
 DATABASE REQUIREMENTS :
       User Table
          * user_id
@@ -131,8 +131,6 @@ Purpose :
 
 ER DIAGRAM :
    # AI Powered Smart Chatbot System
-
-```text
 +------------------+
 |       USER       |
 +------------------+
@@ -172,7 +170,6 @@ ER DIAGRAM :
 | question         |
 | answer           |
 +------------------+
-```
 
 Relationships :
       * One User can have many Chats
