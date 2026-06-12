@@ -107,3 +107,24 @@ Relationships :
       * Chat Table is connected to User Table using user_id
       * Admin manages Users and Chatbot data
       * FAQ Table provides answers to the chatbot system
+
+Database Schema Creation
+         A database schema is the structure of a database.
+         It defines:
+             * Tables
+             * Columns
+             * Data types
+             * Primary keys
+             * Foreign keys
+             * Relationships between tables
+
+
+UI Wireframe Design
+      A UI wireframe is a simple visual layout of an application or website.
+      It shows:
+             * Buttons
+             * Text fields
+             * Navigation menu
+             * Page structure
+             * User interface flow
+Wireframes help developers understand how the system will look before designing the final UI.
