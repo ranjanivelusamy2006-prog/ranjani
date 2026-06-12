@@ -69,35 +69,7 @@ USE CASE DIAGRAM :
      ACTORS :
            * Student 
            * Admin 
-     Diagram : 
-         ...
-             +----------------+
-             |      USER      |
-             +----------------+
-                    |
-      +-------------+-------------+
-      |                           |
-      v                           v
-+---------------+         +---------------+
-| Ask Question  |         | View Response |
-+---------------+         +---------------+
-      |
-      v
-+---------------+
-| View FAQ      |
-+---------------+
-             +----------------+
-             |     ADMIN      |
-             +----------------+
-                    |
-      +-------------+-------------+
-      |                           |
-      v                           v
-+---------------+         +---------------+
-| Manage FAQ    |         | Manage Users  |
-+---------------+         +---------------+
-...
-                        
+    
 DATABASE REQUIREMENTS :
       User Table
          * user_id
@@ -127,51 +99,9 @@ Purpose :
     * Store chatbot questions and responses
     * Manage admin and chatbot data
     * Maintain chat history in MySQL database.
-
-
 ER DIAGRAM :
- ...
-+------------------+
-|       USER       |
-+------------------+
-| user_id (PK)     |
-| name             |
-| email            |
-| password         |
-+------------------+
-         |
-         | 1
-         |
-         | M
-+------------------+
-|       CHAT       |
-+------------------+
-| chat_id (PK)     |
-| user_id (FK)     |
-| question         |
-| response         |
-| timestamp        |
-+------------------+
-
-+------------------+
-|      ADMIN       |
-+------------------+
-| admin_id (PK)    |
-| admin_name       |
-| password         |
-+------------------+
-         |
-         | Manages
-         |
-+------------------+
-|       FAQ        |
-+------------------+
-| faq_id (PK)      |
-| question         |
-| answer           |
-+------------------+
-...
-
+      * User 
+      * Admin
 Relationships :
       * One User can have many Chats
       * Chat Table is connected to User Table using user_id
