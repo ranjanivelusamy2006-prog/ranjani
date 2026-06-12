@@ -1,0 +1,91 @@
+-- =========================================
+-- DATABASE : AI_CHATBOT_SYSTEM
+-- =========================================
+
+CREATE DATABASE ai_chatbot_system;
+
+USE ai_chatbot_system;
+
+-- =========================================
+-- TABLE 1 : USER
+-- =========================================
+
+CREATE TABLE users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    role VARCHAR(20) DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- =========================================
+-- TABLE 2 : ADMIN
+-- =========================================
+
+CREATE TABLE admin (
+    admin_id INT PRIMARY KEY AUTO_INCREMENT,
+    admin_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
+
+-- =========================================
+-- TABLE 3 : CHAT
+-- =========================================
+
+CREATE TABLE chat (
+    chat_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    message TEXT NOT NULL,
+    bot_response TEXT NOT NULL,
+    chat_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (user_id)
+    REFERENCES users(user_id)
+    ON DELETE CASCADE
+);
+
+-- =========================================
+-- TABLE 4 : FEEDBACK
+-- =========================================
+
+CREATE TABLE feedback (
+    feedback_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    feedback_text TEXT,
+    rating INT,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (user_id)
+    REFERENCES users(user_id)
+    ON DELETE CASCADE
+);
+
+-- =========================================
+-- TABLE 5 : QUERY_HISTORY
+-- =========================================
+
+CREATE TABLE query_history (
+    query_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    query_text TEXT,
+    response_text TEXT,
+    query_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (user_id)
+    REFERENCES users(user_id)
+    ON DELETE CASCADE
+);
+
+-- =========================================
+-- SAMPLE DATA
+-- =========================================
+
+INSERT INTO users(name, email, password)
+VALUES
+('Ranjani', 'ranjani@gmail.com', '12345');
+
+INSERT INTO admin(admin_name, email, password)
+VALUES
+('Admin', 'admin@gmail.com', 'admin123');
