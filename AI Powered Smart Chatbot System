@@ -1,24 +1,39 @@
 PROJECT TITLE:
-   AI Powered Smart Chatbot System 
+   AI Powered Smart Student Assistant Chatbot System 
 
    
 PROJECT OBJECTIVES :
-     * Advanced application - Artificial Intelligence , natural language processing
-     * chatbot- answer question,provide information .
-     * System - customer service ,education and healthcare .
+ * To develop an AI-powered chatbot that assists students with academic information.
+ * To provide quick and accurate answers to student queries.
+ * To help students access study materials, timetables, and academic updates easily.
+ * To reduce the time spent searching for educational information.
+ * To improve student learning through personalized assistance.
+ * To provide 24/7 support for students anytime and anywhere.
+ * To create a user-friendly platform for efficient communication and information access.
+ * To enhance the overall educational experience using Artificial Intelligence.
 
 TECHNOLOGY :
-         FOR FRONTEND = react.js
-         FOR BACKEND = python
-         Database=MySQL,Mongodb
+         FOR FRONTEND = HTML ,JavaScript 
+         FOR BACKEND = python , Node.js
+         Database = MySQL,Mongodb
 
  ADVANTAGE:
-       * Fast response
-       * Available 24/7
-       * User friendly
+     
+    * Provides 24/7 student support.
+    * Gives quick and instant responses.
+    * Easy access to academic information.
+    * Saves time and effort for students.
+    * Improves learning and productivity.
+    * Reduces workload on faculty and administrative staff.
+    * User-friendly and accessible from anywhere.
 
 
 DISADVANTAGE:
-      * Needs internet connection
-      * Depends on AI and database
-      * Sometimes gives wrong answers
+
+    * Depends on internet connectivity.
+    * May provide incorrect answers for complex queries.
+    * Requires regular updates and maintenance.
+    * Cannot fully replace human guidance.
+    * Data privacy and security concerns may arise.
+    * Development and maintenance can be costly.
+    * Limited understanding of highly specific or ambiguous questions.
