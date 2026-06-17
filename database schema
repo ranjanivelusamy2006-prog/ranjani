@@ -1,91 +1,58 @@
--- =========================================
--- DATABASE : AI_CHATBOT_SYSTEM
--- =========================================
+CREATE DATABASE ai_student_assistant;
 
-CREATE DATABASE ai_chatbot_system;
+USE ai_student_assistant;
 
-USE ai_chatbot_system;
-
--- =========================================
--- TABLE 1 : USER
--- =========================================
-
+-- User Table
 CREATE TABLE users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(100) NOT NULL,
-    role VARCHAR(20) DEFAULT 'user',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) DEFAULT 'student'
 );
 
--- =========================================
--- TABLE 2 : ADMIN
--- =========================================
-
-CREATE TABLE admin (
-    admin_id INT PRIMARY KEY AUTO_INCREMENT,
-    admin_name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(100) NOT NULL
+-- Student Details Table
+CREATE TABLE students (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    department VARCHAR(100),
+    year INT,
+    phone VARCHAR(15),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
--- =========================================
--- TABLE 3 : CHAT
--- =========================================
-
-CREATE TABLE chat (
+-- Chat History Table
+CREATE TABLE chat_history (
     chat_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
-    message TEXT NOT NULL,
-    bot_response TEXT NOT NULL,
-    chat_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY (user_id)
-    REFERENCES users(user_id)
-    ON DELETE CASCADE
+    question TEXT,
+    answer TEXT,
+    chat_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
--- =========================================
--- TABLE 4 : FEEDBACK
--- =========================================
+-- Academic Information Table
+CREATE TABLE academics (
+    academic_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    subject VARCHAR(100),
+    marks INT,
+    attendance INT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
 
+-- Feedback Table
 CREATE TABLE feedback (
     feedback_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
-    feedback_text TEXT,
+    message TEXT,
     rating INT,
-    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY (user_id)
-    REFERENCES users(user_id)
-    ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
--- =========================================
--- TABLE 5 : QUERY_HISTORY
--- =========================================
-
-CREATE TABLE query_history (
-    query_id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT,
-    query_text TEXT,
-    response_text TEXT,
-    query_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY (user_id)
-    REFERENCES users(user_id)
-    ON DELETE CASCADE
+-- Admin Table
+CREATE TABLE admin (
+    admin_id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(100),
+    password VARCHAR(255)
 );
-
--- =========================================
--- SAMPLE DATA
--- =========================================
-
-INSERT INTO users(name, email, password)
-VALUES
-('Ranjani', 'ranjani@gmail.com', '12345');
-
-INSERT INTO admin(admin_name, email, password)
-VALUES
-('Admin', 'admin@gmail.com', 'admin123');
